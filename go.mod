@@ -1,3 +1,3 @@
-module github.com/jung-kurt/gofpdf/v2
+module github.com/xinyidev/gofpdf/v2
 
 go 1.16
