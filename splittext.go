@@ -40,7 +40,11 @@ func (f *Fpdf) SplitText(txt string, w float64) (lines []string) {
 			}
 			lines = append(lines, string(s[j:sep]))
 			sep = -1
-			j = i
+			if unicode.IsSpace(c) {
+				j = i
+			} else {
+				j = i - 1
+			}
 			l = 0
 		} else {
 			i++
