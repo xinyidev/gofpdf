@@ -38,7 +38,7 @@ func (f *Fpdf) SplitText(txt string, w float64) (lines []string) {
 			} else {
 				i = sep + 1
 			}
-			lines = append(lines, string(s[j:sep]))
+			lines = append(lines, string(s[j:sep+1]))
 			sep = -1
 			j = i
 			l = 0
