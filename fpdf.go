@@ -2750,7 +2750,11 @@ func (f *Fpdf) MultiCell(w, h float64, txtStr, borderStr, alignStr string, fill 
 				i = sep + 1
 			}
 			sep = -1
-			j = i
+			if c == ' ' {
+				j = i
+			} else {
+				j = i - 1
+			}
 			l = 0
 			ns = 0
 			nl++
@@ -2925,7 +2929,7 @@ func (f *Fpdf) WriteLinkID(h float64, displayStr string, linkID int) {
 //
 // width indicates the width of the box the text will be drawn in. This is in
 // the unit of measure specified in New(). If it is set to 0, the bounding box
-//of the page will be taken (pageWidth - leftMargin - rightMargin).
+// of the page will be taken (pageWidth - leftMargin - rightMargin).
 //
 // lineHeight indicates the line height in the unit of measure specified in
 // New().
